@@ -1,0 +1,33 @@
+# Build artifacts
+**/out/
+**/cache/
+**/broadcast/
+**/deployments/
+
+# IDE and editor files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Hardhat files
+cache/
+artifacts/
+typechain/
+typechain-types/
+
+# Coverage reports
+coverage/
+coverage.json
+
+# Gas reports
+gas-report.txt 

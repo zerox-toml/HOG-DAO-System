@@ -1,0 +1,4 @@
+@openzeppelin/=../dependencies/@openzeppelin/
+@shared/=../shared/
+interfaces/=../shared/interfaces/
+forge-std/=../lib/forge-std/src/
