@@ -31,6 +31,8 @@ contract Pair is IPair {
     // keccak256("Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)");
     bytes32 internal constant PERMIT_TYPEHASH =
         0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9;
+    // bytes32 internal constant PERMIT_TYPEHASH =
+    // keccak256("Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)");
     mapping(address => uint) public nonces;
 
     uint internal constant MINIMUM_LIQUIDITY = 10 ** 3;
@@ -519,7 +521,7 @@ contract Pair is IPair {
         // optimistically transfer tokens
         if (amount0Out > 0) {
             // Check if token0 is HOG and apply tax if needed
-            if (token0 == address(0x0000000000000000000000000000000000000000)) { // Placeholder HOG token address
+            if (token0 == address(0xA5fA5731CfCCC7e7DBD202579D3B1F6ee78403E9)) { // Placeholder HOG token address
                 uint256 taxRate = IHOG(token0).getTaxRate();
                 uint256 taxAmount = (amount0Out * taxRate) / 10000;
                 amount0Out = amount0Out - taxAmount;
@@ -529,7 +531,7 @@ contract Pair is IPair {
         }
         if (amount1Out > 0) {
             // Check if token1 is HOG and apply tax if needed
-            if (token1 == address(0x0000000000000000000000000000000000000000)) { // Placeholder HOG token address
+            if (token1 == address(0xA5fA5731CfCCC7e7DBD202579D3B1F6ee78403E9)) { // Placeholder HOG token address
                 uint256 taxRate = IHOG(token1).getTaxRate();
                 uint256 taxAmount = (amount1Out * taxRate) / 10000;
                 amount1Out = amount1Out - taxAmount;

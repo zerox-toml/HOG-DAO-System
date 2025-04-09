@@ -93,8 +93,8 @@ contract GHogRewardPool is ReentrancyGuard {
         devFund = _devFund;
 
         // create all the pools
-        add(0, 50, IERC20(0x784DD93F3c42DCbF88D45E6ad6D3CC20dA169a60), false, 0, address(0)); // Hog-S
-        add(0, 50, IERC20(0xD1CB1622a50506F0fDdf329CB857a0935C7FbbF9), false, 0, address(0)); // GHog-S
+        add(0, 50, IERC20(0x80bbD9699Be5fc7e6e1c8E477792840afAD74CCF), false, 0, address(0)); // Hog-S
+        add(0, 50, IERC20(0x008769eE2D69B2B7da69d04fD1dbD17CFC3353b3), false, 0, address(0)); // GHog-S
 
     }
 

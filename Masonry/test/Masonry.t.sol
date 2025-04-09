@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+MasonryTest// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "forge-std/Test.sol";
@@ -28,9 +28,9 @@ contract MockTreasury {
         return currentEpoch;
     }
 
-    function nextEpochPoint() external view returns (uint256) {
+    function getNextEpochPoint() external view returns (uint256) {
         return nextEpochPoint;
-    }
+    }   
 
     function getHogPrice() external view returns (uint256) {
         return hogPrice;
@@ -64,6 +64,7 @@ contract MasonryTest is Test {
     uint256 public constant INITIAL_SHARE_BALANCE = 1000 ether;
     uint256 public constant STAKE_AMOUNT = 100 ether;
     uint256 public constant REWARD_AMOUNT = 10 ether;
+
 
     function setUp() public {
         vm.startPrank(OWNER);
@@ -264,4 +265,4 @@ contract MasonryTest is Test {
         
         vm.stopPrank();
     }
-} 
+}

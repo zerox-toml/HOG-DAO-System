@@ -7,7 +7,7 @@ import "../contracts/GHOG.sol";
 contract GHOGTest is Test {
     GHOG public ghog;
     
-    address public constant OWNER = address(0x123);
+    address public constant OWNER = address(0x1231);
     address public constant OPERATOR = address(0x456);
     address public constant USER1 = address(0x789);
     address public constant USER2 = address(0xabc);

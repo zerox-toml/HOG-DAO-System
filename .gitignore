@@ -3,6 +3,12 @@
 **/cache/
 **/broadcast/
 **/deployments/
+**/.env
+**/.env.local
+**/.env.*.local               
+**/**/.env
+**/**/.env.local
+**/**/.env.*.local
 
 # IDE and editor files
 .DS_Store
