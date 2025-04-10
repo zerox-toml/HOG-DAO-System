@@ -58,7 +58,8 @@ contract GHogRewardPool is ReentrancyGuard {
     uint256 public sharePerSecond = 0.00186122 ether;
     uint256 public runningTime = 370 days;
 
-    address public swapxToken = 0xA04BC7140c26fc9BB1F36B1A604C7A5a88fb0E70;
+    address public swapxToken = 0xa8D79cC7C889c33cBa84184962002d593Df0e642;
+    // address public swapxToken = 0xA04BC7140c26fc9BB1F36B1A604C7A5a88fb0E70;
 
     // Add these mappings at contract level
     mapping(address => uint256) public lastClaimed;  // Track when user last claimed

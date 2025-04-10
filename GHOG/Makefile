@@ -1,20 +1,10 @@
 deploy-ghog:
 	forge create --broadcast --rpc-url $SEPOLIA_URL --private-key $PRIVATE_KEY contracts/GHOG.sol:GHOG --constructor-args 
-
+    forge create --broadcast contracts/GHOG.sol:GHOG --rpc-url $SEPOLIA_URL --account baseman
 deploy-ghogrewardpool:
 	forge create --broadcast --rpc-url $SEPOLIA_URL --private-key $PRIVATE_KEY contracts/distribution/GHogRewardPool.sol:GHogRewardPool --constructor-args $GHOG_ADDRESS $DEV_FUND_ADDRESS $POOL_INFO
+    forge create --broadcast --rpc-url $SEPOLIA_URL contracts/distribution/GHogRewardPool.sol:GHogRewardPool --account baseman --constructor-args $GHOG_ADDRESS $DEV_FUND_ADDRESS $POOL_START_TIME
 
-
-verify-ghog:
-	forge verify-contract \
-    --chain-id 11155111 \
-    --num-of-optimizations 200 \
-    --watch \
-    --constructor-args $(cast abi-encode "constructor()" ) \
-    --etherscan-api-key 6XJ6B1342MD2S4H1H3HTPVJ7Y2BZ6J7269 \
-    --compiler-version v0.8.19 \
-    0x008769eE2D69B2B7da69d04fD1dbD17CFC3353b3 \
-    contracts/GHOG.sol:GHOG	
 
 # BASE Network
 #  deploy GHOG RewardPool Contract
@@ -28,3 +18,7 @@ deploy-ghog-base:
 # verify
 verify-ghog-base:
     forge verify-contract 0xB37e29527941191bcA11fBb696aF8e257cCcd49d contracts/GHOG.sol:GHOG --chain 84532 --watch
+
+# verify ghogrewardpool
+verify-ghogrewardpool:    
+    forge verify-contract 0xb8b79B96fAF5B2283D8DcCD0e879018896AD058e --constructor-args $(cast abi-encode "constructor(address, address, uint256)" 0xE69A8A6cD11D46BE328F4d6b211032f836f89743 0x77E7d0D483268708556de04AC1FBe7f43beb649B 1744314000)  contracts/distribution/GHogRewardPool.sol:GHogRewardPool --chain 11155111 --watch 
