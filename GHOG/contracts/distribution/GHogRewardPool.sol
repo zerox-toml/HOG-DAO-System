@@ -44,7 +44,7 @@ contract GHogRewardPool is ReentrancyGuard {
     // Info of each pool.
     PoolInfo[] public poolInfo;
 
-    // Info of each user that stakes LP tokens.
+    // Info of each user that stakes LP tokens. 
     mapping(uint256 => mapping(address => UserInfo)) public userInfo;
 
     // Total allocation points. Must be the sum of all allocation points in all pools.
