@@ -1,7 +1,7 @@
 deploy-bhog:
-	forge create --broadcast --rpc-url $SEPOLIA_URL --private-key $PRIVATE_KEY contracts/BHOG.sol:BHOG --constructor-args $ORACLE_ADDRESS $TAX_RECIPIENT
-
-verify-hog:
+	forge create --broadcast --rpc-url $SEPOLIA_URL --account baseman contracts/BHOG.sol:BHOG 
+    
+verify-bhog:
 	forge verify-contract \
     --chain-id 11155111 \
     --num-of-optimizations 200 \
@@ -9,8 +9,11 @@ verify-hog:
     --constructor-args $(cast abi-encode "constructor()" ) \
     --etherscan-api-key 6XJ6B1342MD2S4H1H3HTPVJ7Y2BZ6J7269 \
     --compiler-version v0.8.19 \
-    0x594F468a559A945F1332f043630882D5720A4b3f \
+    0x29A3602FaeB0f2F9D18307FCD612D4588f2De010 \
     contracts/BHOG.sol:BHOG
+
+    forge verify-contract 0x29A3602FaeB0f2F9D18307FCD612D4588f2De010 contracts/BHOG.sol:BHOG --chain 11155111 --watch
+
 
 deploy-base:
     forge create --broadcast contracts/BHOG.sol:BHOG --rpc-url $BASE_SEPOLIA_RPC --account baseman

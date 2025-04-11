@@ -6,3 +6,5 @@ deploy-rewarder-sepolia:
 		--compiler-version v0.8.19 \
 		0xAdAC2e8dD85B69fFC4423BC9112d660C154aF9D4 \
 		contracts/Rewarder.sol:Rewarder	
+
+	forge create contracts/Rewarder.sol:Rewarder --account baseman --rpc-url $SEPOLIA_URL --broadcast --constructor-args $REWARDS_TOKEN $STAKING_TOKEN 5 100

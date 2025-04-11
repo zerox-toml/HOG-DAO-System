@@ -44,11 +44,11 @@ contract GHogRewardPool is ReentrancyGuard {
     // Info of each pool.
     PoolInfo[] public poolInfo;
 
-    // Info of each user that stakes LP tokens.
+    // Info of each user that stakes LP tokens. 
     mapping(uint256 => mapping(address => UserInfo)) public userInfo;
 
     // Total allocation points. Must be the sum of all allocation points in all pools.
-    uint256 public totalAllocPoint = 0;
+    uint256 public totalAllocPoint = 0;  
 
     // The time when GHOG mining starts.
     uint256 public poolStartTime;
